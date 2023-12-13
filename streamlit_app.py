@@ -1,5 +1,5 @@
 # example/st_app.py
-pip install st-gsheets-connection
+git+https://github.com/streamlit/gsheets-connection
 
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
