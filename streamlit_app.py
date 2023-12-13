@@ -18,7 +18,7 @@ st.subheader('1.B. Combien de logements du bailleur "IMM 3F" ont été financés
 filtered_df1 = df[df['Année du financement - agrément'] == '2015']
 filtered_df2 = filtered_df1[filtered_df1['Bailleur social'] == 'IMM 3F']
 # Calculez le nombre d'occurrences de chaque élément dans la colonne d'intérêt
-occurrences = filtered_df2['Nombre total de logements financés'].sum()
+occurrences = filtered_df2['Nombre total de logements financés'].value_counts()
 
 # Affichez les résultats dans Streamlit
 st.write(occurrences)
