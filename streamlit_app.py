@@ -4,6 +4,7 @@ import streamlit as st
 
 
 
-st.title("Coucous")
+st.title("Yooo")
 
 df = pd.read_excel("LogementsSociauxParis.xlsx")
+st.dataframe(df)
