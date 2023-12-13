@@ -7,5 +7,5 @@ def load_data(path: str):
   data = pd.read_excel(path)
   return data
 
-df = load_data("./Logements sociaux Paris.xlsx")
+df = load_data("Logements sociaux Paris.xlsx")
 st.dataframe(df)
