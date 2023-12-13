@@ -14,7 +14,7 @@ df["Adresse du programme"][1]*3
 menu_options = ["Accueil", "Section 1", "Section 2", "Section 3"]
 
 # Sélection de l'option du menu latéral
-selected_option = st.sidebar.selectbox("Menu", menu_options)
+selected_option = st.sidebar.radio("Menu", menu_options)
 
 # Contenu en fonction de l'option sélectionnée
 if selected_option == "Accueil":
@@ -26,6 +26,3 @@ elif selected_option == "Section 1":
 elif selected_option == "Section 2":
     st.header("Section 2")
     st.write("Contenu de la deuxième section.")
-elif selected_option == "Section 3":
-    st.header("Section 3")
-    st.write("Contenu de la troisième section.")
