@@ -1,13 +1,11 @@
+# example/st_app.py
+
 import streamlit as st
-pip install st-gsheets-connection
+from streamlit_gsheets import GSheetsConnection
 
-st.title('Actionnn')
+url = "https://docs.google.com/spreadsheets/d/1JDy9md2VZPz4JbYtRPJLs81_3jUK47nx6GYQjgU8qNY/edit?usp=sharing"
 
-# URL du fichier Excel sur GitHub
-url = 'https://github.com/jeanrannou/action-tank/blob/main/Logements%20sociaux%20Paris.xlsx?raw=true'
+conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
-# Lire le fichier Excel
-df = pd.read_csv(url)
-
-# Afficher le DataFrame
-st.write(df)
+data = conn.read(spreadsheet=url, usecols=[0, 1])
+st.dataframe(data)
