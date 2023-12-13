@@ -10,19 +10,29 @@ df = pd.read_excel("LogementsSociauxParis.xlsx")
 st.dataframe(df)
 df["Adresse du programme"][1]*3
 
-# Options du menu latéral
-menu_options = ["Accueil", "Section 1", "Section 2"]
+st.sidebar.title("Menu de Défilement")
+if st.sidebar.button("Accueil"):
+    st.markdown("<a href='#accueil'>Accueil</a>", unsafe_allow_html=True)
+if st.sidebar.button("Section 1"):
+    st.markdown("<a href='#section1'>Section 1</a>", unsafe_allow_html=True)
+if st.sidebar.button("Section 2"):
+    st.markdown("<a href='#section2'>Section 2</a>", unsafe_allow_html=True)
+if st.sidebar.button("Section 3"):
+    st.markdown("<a href='#section3'>Section 3</a>", unsafe_allow_html=True)
 
-# Sélection de l'option du menu latéral
-selected_option = st.sidebar.radio("Menu", menu_options)
+# Contenu de la page avec des ancres HTML
+st.markdown("## Accueil")
+st.write("C'est la première section de votre application.")
+st.markdown("<a name='accueil'></a>", unsafe_allow_html=True)
 
-# Contenu en fonction de l'option sélectionnée
-if selected_option == "Accueil":
-    st.header("Bienvenue sur la page d'accueil")
-    st.write("C'est la première section de votre application.")
-elif selected_option == "Section 1":
-    st.header("Section 1")
-    st.write("Contenu de la première section.")
-elif selected_option == "Section 2":
-    st.header("Section 2")
-    st.write("Contenu de la deuxième section.")
+st.markdown("## Section 1")
+st.write("Contenu de la première section.")
+st.markdown("<a name='section1'></a>", unsafe_allow_html=True)
+
+st.markdown("## Section 2")
+st.write("Contenu de la deuxième section.")
+st.markdown("<a name='section2'></a>", unsafe_allow_html=True)
+
+st.markdown("## Section 3")
+st.write("Contenu de la troisième section.")
+st.markdown("<a name='section3'></a>", unsafe_allow_html=True)
