@@ -5,7 +5,7 @@ from st_aggrid import AgGrid
 
 
 
-st.title("Coucou ohlala")
+st.title("Coucou")
 
 df = pd.read_excel("LogementsSociauxParis.xlsx")
 AgGrid(df)
