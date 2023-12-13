@@ -4,6 +4,5 @@ import streamlit as st
 
 
 
-st.title("Coucoussss")
+st.title("Coucous")
 
-print("oui")
