@@ -1,4 +1,5 @@
 import streamlit as st
+pip install st-gsheets-connection
 
 st.title('Actionnn')
 
