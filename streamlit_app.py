@@ -6,7 +6,7 @@ st.title('Action tank')
 url = 'https://github.com/jeanrannou/action-tank/blob/main/Logements%20sociaux%20Paris.xlsx?raw=true'
 
 # Lire le fichier Excel
-df = pd.read_excel(url)
+df = pd.read_csv(url)
 
 # Afficher le DataFrame
 st.write(df)
