@@ -11,7 +11,7 @@ st.dataframe(df)
 df["Adresse du programme"][1]*3
 
 # Options du menu latéral
-menu_options = ["Accueil", "Section 1", "Section 2", "Section 3"]
+menu_options = ["Accueil", "Section 1", "Section 2"]
 
 # Sélection de l'option du menu latéral
 selected_option = st.sidebar.radio("Menu", menu_options)
