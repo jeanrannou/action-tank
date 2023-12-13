@@ -1,12 +1,25 @@
-# example/st_app.py
--e git+https://github.com/streamlit/gsheets-connection
+st.set_page_config(page_title="Sales Dashboard", page_icon=":bar_chart:", layout="wide")
 
-import streamlit as st
-from streamlit_gsheets import GSheetsConnection
+st.title("Sales Streamlit Dashboard")
+st.markdown("_Prototype v0.4.1_")
 
-url = "https://docs.google.com/spreadsheets/d/1JDy9md2VZPz4JbYtRPJLs81_3jUK47nx6GYQjgU8qNY/edit?usp=sharing"
+with st.sidebar:
+    st.header("Configuration")
+    uploaded_file = st.file_uploader("Choose a file")
 
-conn = st.experimental_connection("gsheets", type=GSheetsConnection)
+if uploaded_file is None:
+    st.info(" Upload a file through config", icon="ℹ️")
+    st.stop()
 
-data = conn.read(spreadsheet=url, usecols=[0, 1])
-st.dataframe(data)
+#######################################
+# DATA LOADING
+#######################################
+
+
+@st.cache_data
+def load_data(path: str):
+    df = pd.read_excel(path)
+    return df
+
+
+df = load_data(uploaded_file)
